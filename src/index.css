@@ -1,13 +1,363 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+button{
+    cursor: pointer;
+}
+svg{
+    fill: #131821;
+    opacity: 0.3;
+}
+section{
+    height: 100vh;
+    display: flex;
+}
+p{
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Arial';
+    font-style: normal;
+    color: #6A707B;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a{  
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    margin: 0;
+    color:#131821;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    outline: none;
+}
+
+a:hover{
+    color: #4066A5;
+}
+
+a:visited{
+    color: #233759 !important;
+}
+
+h1{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    margin: 0;
+    font-family: 'Georgia';
+    font-style: normal;
+}
+
+nav{
+    z-index: 99999;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a{ /* Change a tag style only for navbar */
+    text-decoration: none;
+    color: #6A707B;
+}
+
+.nav-bar-logo-content{ /*Pineapple and pineapple logo :) */
+    display: flex;
+    align-items: flex-end;
+    gap:15px;
+}
+
+.nav-bar-navigation{/* <a> tag navigations */
+    display: flex;
+    align-items: flex-end;
+    gap:30px;
+}
+
+.imgBx{ /* Background image container */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.imgBx img{ /*Background image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contentBx{/* Left side white container */
+    padding: 100px 100px 100px 100px;
+    /*Make container not to resize until media */ 
+    width: 100%;
+    max-width: 480px;
+    min-width: 480px;
+}
+
+.subscription-main-container{/* Used for centering subscription form */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscription-main-content{/* Subscription user interactive container */
+    z-index: 1;
+    margin-top: 53px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.thanks-for-subscribing-container{/* Used for centering subscribed content */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.thanks-for-subscribing-content{ /* Subscribed data container */
+    width: 100%;
+    max-width: 400px;
+    margin-top: 129px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
+    gap:30px;
+}
+
+.thanks-for-subscribing-content__text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:20px;
+    margin-bottom: 20px; /* 30px of parent gap + 20px */
+}
+
+.subscription-main-content__text{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:15px;
+}
+
+.subscription-main-content form{
+    width: 100%;
+}
+
+.subscription-input-container{ /* Holding subscription input and button */
+    max-height: 68px;
+    width: 663px;
+    margin-right: -285px;
+    position: relative;
+    display: flex;
+    border: 1px solid #E3E3E4;
+    border-left: 4px solid #4066A5;
+    transition:0.2s linear;
+}
+
+.subscription-input-container input{
+    padding: 23px 0px 23px 40px;
+    width: 100%;
+    position: relative;
+    border: none;
+    outline: none;
+}
+
+.subscription-input-container input[placeholder]{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.subscription-input-container:hover{
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+}
+
+.subscription-input-container:focus-within svg{ /* Make arrow blue when focus on input */
+    transition:0.2s linear;
+    fill: #4066A5;
+    opacity: 1;
+}
+
+.subscription-input-container:focus-within{
+    border: 1px solid #4066A5;
+    border-left: 4px solid #4066A5;
+}
+
+.subscription-input-container-error{
+    border: 1px solid #B80808 !important;
+    border-left: 4px solid #B80808 !important; 
+}
+
+.subscription-input-container button[type="submit"]{
+    padding-left: 15px;
+    padding-right: 39px;
+    outline: none;
+    border: none;
+    background-color: #FFFFFF;
+    border-left:none;
+}
+
+.subscription-input-container button[type="submit"]:hover svg{ /* Change to blue when hover on button */
+    transition:0.2s linear;
+    fill: #4066A5;
+    opacity: 1;
+}
+
+.subscription-input-container button[type="submit"]:disabled svg{
+    fill: #131821;
+    opacity: 0.3;
+}
+
+.error-message{
+    color: #B80808;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.terms-of-service{
+    padding-left: 40px;
+    margin-top: 3px; /* Gap of 50px and + 3px */
+    display: flex;
+    align-items: center;
+    gap:15px;
+    -webkit-appearance: initial;
+    appearance: initial;
+}
+
+.terms-of-service input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #E3E3E4;
+    border-radius: 3px;
+}
+  
+.terms-of-service input[type="checkbox"]:checked {
+    background-image: url('../public/assets/checkmark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4066A5;
+}
+  
+.terms-of-service label, label a{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px !important;
+    line-height: 28px !important;
+}
+
+/* For social buttons look in SocialFooter folder css file */
+
+@media (max-width:768px){
+    h1{
+        font-weight: 400 !important;
+        font-size: 24px !important;
+        line-height: 34px !important;
+    }
+
+    nav{
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+        padding-top: 10px !important;
+        padding-bottom: 16px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .nav-bar-navigation{
+        align-items: center !important;
+        gap:20px !important;
+    }
+
+    a{
+        line-height: 24px !important;
+        font-size: 14px !important;
+    }
+
+    p{
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        line-height: 26px !important;
+    }
+
+    .imgBx{
+        position: absolute !important;
+    }
+
+    .contentBx{
+        padding: 0px !important; /* Moving from 100px to 0 */
+
+        /* Make it take full width of screen */
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0px !important;
+    }
+
+    .subscription-main-content {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+        padding: 30px 20px 30px 20px !important;
+        gap:20px !important;
+        margin: 0px 20px 65px 20px;
+    }
+
+    .subscription-main-content__text{
+        padding: 0px !important;
+        gap:10px !important;
+    }
+
+    .thanks-for-subscribing-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .thanks-for-subscribing-content{
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+        padding: 30px 20px 30px 20px !important;
+        margin: 0px 20px 65px 20px;
+        gap:39px !important;
+    }
+
+    .thanks-for-subscribing-content__text{
+        gap: 10px !important;
+        margin-bottom: 0px !important; 
+    }
+
+    /* Hide pineapple text logo */
+    #logo-text{
+        display: none !important;
+    }
+    .subscription-input-container{
+        width: 100% !important;
+        margin-right: 0px !important;
+        max-height: 58px;
+    }
+    .subscription-input-container input{
+        padding: 18px 0px 18px 44px;
+        padding-left: 15px !important;
+    }
+
+    .subscription-input-container button{
+        padding-right: 17px !important;
+    }
+    .terms-of-service{
+        padding-left: 0px !important;
+        margin-top: 0px !important;
+    }
 }
