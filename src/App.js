@@ -82,7 +82,7 @@ function App() {
           </div>
           <form onSubmit={handleSubmit}>
             <div className= {`subscription-input-container ${errorMessage?.length > 0 ? 'subscription-input-container-error' : ''}`}>
-              <input onChange={handleChangeEmail} name = "email" placeholder='Type your email adress here...'/>
+              <input onChange={handleChangeEmail} name = "email" placeholder='Type your email address here...'/>
               <button disabled={submitButtonDisabled} onClick = {handleSubmit} type="submit">
                 {/*Submit button arrow*/}
                 <svg width="24" height="14" viewBox="0 0 24 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
