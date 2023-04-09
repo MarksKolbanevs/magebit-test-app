@@ -33,7 +33,7 @@ a{
     font-weight: 400;
     margin: 0;
     color:#131821;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial;
     font-style: normal;
     outline: none;
 }
@@ -67,16 +67,25 @@ nav a{ /* Change a tag style only for navbar */
     color: #6A707B;
 }
 
+
 .nav-bar-logo-content{ /*Pineapple and pineapple logo :) */
     display: flex;
     align-items: flex-end;
     gap:15px;
 }
 
+.nav-bar-logo-content img{
+    cursor:'pointer';
+}
+
 .nav-bar-navigation{/* <a> tag navigations */
     display: flex;
     align-items: flex-end;
     gap:30px;
+}
+
+#logo-text{
+    padding-bottom: 4px;
 }
 
 .imgBx{ /* Background image container */

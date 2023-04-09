@@ -64,8 +64,8 @@ function App() {
       <div className='contentBx'>
         <nav>
           <div className='nav-bar-logo-content'>
-            <img src='assets/logo-icon.svg' href="#" style={{cursor:'pointer'}}/>
-            <img src='assets/logo-text.svg' href="#" id="logo-text" style={{cursor:'pointer'}}/>
+            <img src='assets/logo-icon.svg' href="#"/>
+            <img src='assets/logo-text.svg' href="#" id="logo-text"/>
           </div>
           <div className='nav-bar-navigation'>
             <a href = "#">About</a>
