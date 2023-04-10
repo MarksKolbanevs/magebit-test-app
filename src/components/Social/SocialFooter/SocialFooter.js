@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './../index.css';
 import { FacebookButton,InstagramButton,TwitterButton, YoutubeButton } from '../SocialButtons';
 
 function SocialFooter() {

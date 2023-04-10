@@ -12,7 +12,7 @@ function App() {
   let [runCheckData, setRunCheckData] = useState(false); // Used to not run validation after loading the page
 
   useEffect(() => {
-    if(runCheckData){ // Will run after user click the button
+    if(runCheckData){ // Will run after user click the submit button
       checkData();
     }
   }, [email, checkboxValue]);
@@ -27,8 +27,8 @@ function App() {
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    let data = checkData();
-    if(data){
+    let dataCheck = checkData();
+    if(dataCheck){
       setEmailSubmit(true);
     }
   }
@@ -45,13 +45,12 @@ function App() {
       setSubmitButtonDisabled(true);
       return false;
     }
-    if(/\S+@\S+\.\S+/.test(email) == true){
-      console.log('Successfull');
+    if(/\S+@\S+\.\S+/.test(email) == true && email.toLowerCase().endsWith('.com')){
       setSubmitButtonDisabled(false);
       setErrorMessage('');
       return true;
     }else{
-      setErrorMessage('Please provide valid email!');
+      setErrorMessage('Please provide a valid email!');
       setSubmitButtonDisabled(true);
       return false;
     };
